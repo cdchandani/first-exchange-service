@@ -10,7 +10,7 @@ public class OrderMapper implements IMapper<OrderTO> {
 
     private final Logger logger = LoggerFactory.getLogger(OrderMapper.class);
 
-    public OrderTO map(String inputMessage) {
+    public OrderTO map(@org.jetbrains.annotations.NotNull String inputMessage) {
         String message = "";
         if (inputMessage.trim().indexOf(",") == 0) {
             message = inputMessage.substring(1);

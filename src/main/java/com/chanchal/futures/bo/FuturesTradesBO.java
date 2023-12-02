@@ -5,15 +5,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 ///home/hp/dev/work/FinancialData/future_trades/nse_future_stock_25Jan2023_sample.csv
 @Entity
-@Table(name = "tbl_futures_trades", schema = "futures")
+@Table(name = "tbl_raw_futures_trades", schema = "futures")
+@Getter
+@Setter
+@ToString
 public class FuturesTradesBO {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+	private Long orderId;
 	private String contractDate;
 	private String previousS;
 	private String openPrice;
@@ -29,125 +36,4 @@ public class FuturesTradesBO {
 	private String expiry;
 	private String symbol;
 	private String extractionDate;
-
-	public String getContractDate() {
-		return contractDate;
-	}
-
-	public void setContractDate(String contractDate) {
-		this.contractDate = contractDate;
-	}
-
-	public String getPreviousS() {
-		return previousS;
-	}
-
-	public void setPreviousS(String previousS) {
-		this.previousS = previousS;
-	}
-
-	public String getOpenPrice() {
-		return openPrice;
-	}
-
-	public void setOpenPrice(String openPrice) {
-		this.openPrice = openPrice;
-	}
-
-	public String getHighPrice() {
-		return highPrice;
-	}
-
-	public void setHighPrice(String highPrice) {
-		this.highPrice = highPrice;
-	}
-
-	public String getLowPrice() {
-		return lowPrice;
-	}
-
-	public void setLowPrice(String lowPrice) {
-		this.lowPrice = lowPrice;
-	}
-
-	public String getClosePric() {
-		return closePric;
-	}
-
-	public void setClosePric(String closePric) {
-		this.closePric = closePric;
-	}
-
-	public String getSettlement() {
-		return settlement;
-	}
-
-	public void setSettlement(String settlement) {
-		this.settlement = settlement;
-	}
-
-	public String getNetChange() {
-		return netChange;
-	}
-
-	public void setNetChange(String netChange) {
-		this.netChange = netChange;
-	}
-
-	public String getOiNoCon() {
-		return oiNoCon;
-	}
-
-	public void setOiNoCon(String oiNoCon) {
-		this.oiNoCon = oiNoCon;
-	}
-
-	public String getTradedQty() {
-		return tradedQty;
-	}
-
-	public void setTradedQty(String tradedQty) {
-		this.tradedQty = tradedQty;
-	}
-
-	public String getTradedVolume() {
-		return tradedVolume;
-	}
-
-	public void setTradedVolume(String tradedVolume) {
-		this.tradedVolume = tradedVolume;
-	}
-
-	public String getTradedVal() {
-		return tradedVal;
-	}
-
-	public void setTradedVal(String tradedVal) {
-		this.tradedVal = tradedVal;
-	}
-
-	public String getExpiry() {
-		return expiry;
-	}
-
-	public void setExpiry(String expiry) {
-		this.expiry = expiry;
-	}
-
-	public String getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
-	}
-
-	public String getExtractionDate() {
-		return extractionDate;
-	}
-
-	public void setExtractionDate(String extractionDate) {
-		this.extractionDate = extractionDate;
-	}
-
 }

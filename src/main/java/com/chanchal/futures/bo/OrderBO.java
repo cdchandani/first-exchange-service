@@ -7,7 +7,7 @@ import lombok.ToString;
 
 ///home/hp/dev/work/FinancialData/orders_data/daywise_order_book_2023-01-19.csv
 @Entity
-@Table(name = "tbl_daywise_order", schema = "futures")
+@Table(name = "tbl_raw_order", schema = "futures")
 @ToString
 @Getter
 @Setter
